@@ -16,10 +16,10 @@ def download_books():
     df.columns = ['title', 'doi_url', 'open_url']
 
     # progress bar for sanity
-    t = tqdm(total=df.head(10).shape[0], desc='Epoch', position=0)
+    t = tqdm(total=df.shape[0], desc='Epoch', position=0)
 
     # loop through each title to download
-    for book in df.head(10).itertuples():
+    for book in df.itertuples():
         # rename title to use as file name
         title = book.title.replace(' ', '_')
 
